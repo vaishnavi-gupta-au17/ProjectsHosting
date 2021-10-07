@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.static("public"));
 
-app.listen(3030, () => {
-  console.log("Server Started at Port 3030");
+console.log(`Heroku Port No is ${process.env.PORT}`);
+const prt = process.env.PORT || 3033;
+app.listen(prt, () => {
+  console.log(`Server Started at PORT ${prt}`);
 });
